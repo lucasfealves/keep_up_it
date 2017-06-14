@@ -1,0 +1,56 @@
+<div class="container">
+	<h1>Cadastro de Aluno</h1>
+	<form>
+		<div class="form-group">
+			<label for="nome">Nome</label> <input type="text"
+				class="form-control" name="nome_aluno" [(ngModel)]="aluno.nome_aluno" required>
+		</div>
+		<div class="form-group">
+			<label for="nome">CPF</label> <input type="text"
+				class="form-control" name="cpf" [(ngModel)]="aluno.cpf" required>
+		</div>
+		<div class="form-group">
+			<label for="nome">E-mail</label> <input type="text"
+				class="form-control" name="cpf" [(ngModel)]="aluno.email" required>
+		</div>
+		<div class="form-group">
+			<label for="nome">Sexo</label> 
+			<select class="form-control" name="sexo" [(ngModel)]="aluno.sexo" required >
+				<option value="M">masculino</option>
+				<option value="F">feminino</option>
+			</select>
+		</div>		
+		<div class="form-group">
+			<label for="idade">Idade</label> <input type="text"
+				class="form-control" name="idade" [(ngModel)]="aluno.idade"
+				required>
+		</div>
+		<div class="form-group">
+			<label for="nome">Endereco</label> <input type="text"
+				class="form-control" name="endereco" [(ngModel)]="aluno.endereco" required>
+		</div>		
+		<div class="form-group">
+			<label for="nome">Bairro</label> <input type="text"
+				class="form-control" name="endereco" [(ngModel)]="aluno.bairro" required>
+		</div>		
+		<div class="form-group">
+			<label for="nome">Numero</label> <input type="text"
+				class="form-control" name="endereco" [(ngModel)]="aluno.numero" required>
+		</div>		
+		<button class="btn btn-success" (click)="addCliente()">Cadastrar</button>
+	</form>
+
+	<ul>
+		<li *ngFor="let aluno of alunos">{{aluno.nome_aluno}} - {{aluno.cpf}} - {{aluno.sexo}} - {{aluno.email}} - 
+			{{aluno.idade}}</li>
+	</ul>
+</div>
+
+
+
+
+
+
+
+
+

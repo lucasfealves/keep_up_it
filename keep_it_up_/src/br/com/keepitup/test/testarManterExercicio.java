@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import br.com.keepitup.dao.ExercicioDao;
 import br.com.keepitup.entity.Exercicio;
+import br.com.keepitup.service.ExercicioService;
 
 
 
@@ -26,7 +27,7 @@ public class testarManterExercicio {
 		e.setRepeticoes(null);
 		e.setPeso(null);
 	
-		
+		new ExercicioService().salvar(e);
 		
 		Assert.assertEquals(true,e.getId() != null);		
 		

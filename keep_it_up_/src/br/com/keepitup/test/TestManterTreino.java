@@ -10,6 +10,7 @@ import br.com.keepitup.dao.TreinoDao;
 import br.com.keepitup.entity.Aluno;
 import br.com.keepitup.entity.Exercicio;
 import br.com.keepitup.entity.Treino;
+import br.com.keepitup.service.TreinoService;
 
 
 
@@ -21,7 +22,7 @@ public class TestManterTreino {
 		//rotina de cadastro
 		Aluno a = new Aluno();
 		
-		a.setMatricula(null);
+		a.setMatricula(1);
 		a.setData_matricula("20-06-1989");
 		a.setData_cancelamento(null);
 		a.setStatus("Ativo");
@@ -37,7 +38,7 @@ public class TestManterTreino {
 		
 		Exercicio e = new Exercicio();
 		
-		e.setId(null);
+		e.setId(1);
 		e.setNome_exercicio("Supino Reto");
 		e.setDescricao("Exercicio realizado de certa forma");
 		e.setImagem("stringdaimagem");
@@ -52,7 +53,7 @@ public class TestManterTreino {
 		t.setData_criacao("20/06/1989");
 		t.setData_troca("20/11/1989");
 			
-		
+		new TreinoService().salvar(t);
 		
 		Assert.assertEquals(true,t.getId() != null);		
 		
