@@ -1,34 +1,34 @@
 import { Component } from '@angular/core';
-import { HttpAlunoService } from './http_aluno.service'
-import { Aluno } from './aluno.component'
+import { HttpTreinoService } from './http_treino.service'
+import { Treino } from './treino.component'
 
 @Component({
   selector: 'app-root',
-  templateUrl: './http_aluno.component.html',
-  providers: [HttpAlunoService]
+  templateUrl: './http_treino.component.html',
+  providers: [HttpTreinoService]
 })
-export class HttpAlunoComponent {
-  alunos: Aluno[];
-  aluno: Aluno;
+export class HttpTreinoComponent {
+  treinos: Treino[];
+  treino: Treino;
 
-  constructor(private httpAlunoS: HttpAlunoService) {
-    this.aluno = new Aluno();
-    this.getAlunos();
+  constructor(private httpTreinoS: HttpTreinoService) {
+    this.treino = new Treino();
+    this.getTreinos();
   }
 
-  getAlunos() {
-    this.httpAlunoS.getAlunos().subscribe(
-      clientes => this.alunos = clientes,
+  getTreinos() {
+    this.httpTreinoS.getAlunos().subscribe(
+      treinos => this.treinos = treinos,
       error => alert(error),
       () => console.log('terminou')
     );
   }
 
   addCliente() {
-    this.httpAlunoS.addAluno(this.aluno).subscribe(
+    this.httpTreinoS.addAluno(this.treino).subscribe(
       data => data,
       error => alert(error),
-      () => this.getAlunos()
+      () => this.getTreinos()
     );
 
 

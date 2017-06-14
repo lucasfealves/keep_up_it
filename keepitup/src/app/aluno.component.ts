@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 export class Aluno {
+  public matricula: number;
   public nome_aluno: string;
   public cpf: string;
   public sexo: string;
