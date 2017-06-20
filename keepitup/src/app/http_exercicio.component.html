@@ -1,0 +1,35 @@
+<div class="container">
+	<h1>Cadastro de Exercico</h1>
+	<form>
+		<div class="form-group">
+			<label for="nome">nome</label> 
+			<input type="text" class="form-control" name="nome_aluno" [(ngModel)]="exercicio.nome_exercicio" required>
+		</div>
+		<div class="form-group">
+			<label for="nome">descricao</label> 
+			<input type="text" class="form-control" name="nome_aluno" [(ngModel)]="exercicio.descricao" required>
+		</div>
+		<div class="form-group">
+			<label for="nome">Peso</label> 
+			<input type="number" class="form-control" name="nome_aluno" [(ngModel)]="exercicio.peso" required>
+		</div>
+		<div class="form-group">
+			<label for="nome">Repeticoes</label> 
+			<input type="number" class="form-control" name="nome_aluno" [(ngModel)]="exercicio.repeticoes" required>
+		</div>
+		<button class="btn btn-success" (click)="addExercicio()">Cadastrar</button>
+	</form>
+
+	<ul>
+		<li *ngFor="let exercicio of exercicios">{{exercicio.nome_exercicio}} - {{exercicio.descricao}}</li>
+	</ul>
+</div>
+
+
+
+
+
+
+
+
+

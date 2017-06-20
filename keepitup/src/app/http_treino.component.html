@@ -2,14 +2,24 @@
 	<h1>Cadastro de Treino</h1>
 	<form>
 		<div class="form-group">
-			<label for="nome">Treino</label> 
-			<input type="text" class="form-control" name="nome_aluno" [(ngModel)]="treino.id" required>
+			<label for="aluno">Aluno</label> 
+			<select name="aluno" [(ngModel)]="treino.aluno.matricula">
+				<option *ngFor="let aluno of alunos" value="{{aluno.matricula}}">{{aluno.nome_aluno}}</option>
+			</select>
 		</div>
+		
+		<div class="form-group">
+			<label for="exercicio">Exercicio</label> 
+			<select name="exercicio" [(ngModel)]="treino.exercicio.id">
+				<option *ngFor="let exercicio of exercicios" value="{{exercicio.id}}">{{exercicio.nome_exercicio}}</option>
+			</select>
+		</div>
+
 		<button class="btn btn-success" (click)="addTreino()">Cadastrar</button>
 	</form>
 
 	<ul>
-		<li *ngFor="let treino of treinos">{{treino.id}}</li>
+		<li *ngFor="let treino of treinos">{{treino.aluno.nome_aluno}} - {{treino.exercicio.nome_exercicio}}</li>
 	</ul>
 </div>
 

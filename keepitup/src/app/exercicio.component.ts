@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-export class Execrcicio {
+export class Exercicio {
   public id: number;
   public nome_exercicio: string;
   public descricao: string;

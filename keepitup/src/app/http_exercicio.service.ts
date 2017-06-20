@@ -4,26 +4,26 @@ import { Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/Rx';
-import { Treino } from './treino.component'
+import { Exercicio } from './exercicio.component';
 
 @Injectable()
-export class HttpTreinoService {
+export class HttpExercicioService {
   constructor(private _http: Http) { }
 
-  getTreinos(): Observable<Treino[]> {
-    return this._http.get('http://localhost:8080/keep_it_up_/rest/treinorest').
+  getExercicios(): Observable<Exercicio[]> {
+    return this._http.get('http://localhost:8080/keep_it_up_/rest/exerciciorest').
       map(this.extractData);
   }
 
   private extractData(res: Response) {
-    return res.json()['treino'];
+    return res.json()['exercicio'];
   }
 
-  addTreino(treino: Treino): Observable<string> {
-    const json = JSON.stringify(treino);
+  addExercicio(Exercicio: Exercicio): Observable<string> {
+    const json = JSON.stringify(Exercicio);
     const headers = new Headers({ 'Content-Type': 'application/json' });
     const options = new RequestOptions({ headers: headers });
-    return this._http.post('http://localhost:8080/keep_it_up_/rest/treinorest',
+    return this._http.post('http://localhost:8080/keep_it_up_/rest/exerciciorest',
       json, options).map(res => res.json());
   }
 }
